@@ -1,0 +1,39 @@
+registration_serempre.registration_form:
+  path: '/user/registration'
+  defaults:
+    _form: '\Drupal\registration_serempre\Form\RegistrationForm'
+    _title: 'Registration Form'
+  requirements:
+    _access: 'TRUE'
+
+registration_serempre.display_users_controller:
+  path: '/user/query'
+  defaults:
+    _controller: '\Drupal\registration_serempre\Controller\DisplayUsersController::display'
+    _title: 'Users'
+  requirements:
+    _permission: 'access content'
+
+registration_serempre.delete_form:
+  path: '/user/delete/{uid}'
+  defaults:
+    _form: '\Drupal\registration_serempre\Form\DeleteForm'
+    _title: 'Delete Form'
+  requirements:
+    _access: 'TRUE'
+
+registration_serempre.user_query_excel:
+  path: '/user/query/excel'
+  defaults:
+    _form: '\Drupal\registration_serempre\Form\ExportForm'
+    _title: 'Export Users Data'
+  requirements:
+    _access: 'TRUE'
+
+registration_serempre.modal:
+  path: 'user/registration/modal'
+  defaults:
+    _title: 'Modal'
+    _controller: '\Drupal\registration_serempre\Controller\CustomModalController::modal'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,27 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function registration_serempre_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.registration_serempre':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module contains the following URLs ->
+        Url 1: user/registration: User registration.
+        Url 2: user/query: User query.
+        Url 3: user/query/excel: Export users.') . '</p>';
+    return $output;
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function registration_serempre_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'registration_serempre/libraries_registration_serempre';
+  $attachments['#attached']['library'][] = 'registration_serempre/registration_serempre';
+}

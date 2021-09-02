@@ -1,0 +1,4 @@
+access all registration_serempre:
+  title: 'registration_serempre access control'
+  description: 'Access control when accessing to module registration_serempre.'
+  restrict access: TRUE

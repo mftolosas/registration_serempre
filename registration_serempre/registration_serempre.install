@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function registration_serempre_schema() {
+    $schema['myusers'] = array(
+        'fields' => array(
+            'id'=>array(
+            'type'=>'serial',
+            'not null' => TRUE,
+            ),
+            'name'=>array(
+            'type' => 'varchar',
+            'length' => 60,
+            'not null' => TRUE,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function registration_serempre_uninstall() {
+    if (db_table_exists('register')) {
+        db_drop_table('register');
+    }
+}
