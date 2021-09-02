@@ -23,5 +23,4 @@ function registration_serempre_help($route_name, RouteMatchInterface $route_matc
  */
 function registration_serempre_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'registration_serempre/libraries_registration_serempre';
-  $attachments['#attached']['library'][] = 'registration_serempre/registration_serempre';
 }

@@ -14,25 +14,8 @@ use Drupal\Core\Database\Query\PagerSelectExtender;
  */
 class DisplayUsersController extends ControllerBase {
 
-    public function getContent() {
-        // First we'll tell the user what's going on. This content can be found
-        // in the twig template file: templates/description.html.twig.
-        // @todo: Set up links to create nodes and point to devel module.
-        $build = [
-            'description' => [
-                '#theme' => 'registration_serempre_description',
-                '#description' => 'foo',
-                '#attributes' => [],
-            ],
-        ];
-        return $build;
-    }
-
     /**
-     * Display.
-     *
-     * @return string
-     *   Return Hello string.
+     * Display Table.
      */
     public function display() {
 

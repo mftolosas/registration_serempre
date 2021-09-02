@@ -77,6 +77,7 @@ class RegistrationForm extends FormBase {
 
         include_once getcwd() . '/modules/custom/registration_serempre/includes/request.inc';
 
+        global $base_url;
         $field = $form_state->getValues();
         $name = $field['name'];
         $field  = array(
@@ -103,7 +104,7 @@ class RegistrationForm extends FormBase {
             $response->addCommand(new HtmlCommand('#grievance_form_wrapper', $form));
         }
         else {
-            $content = 'Successful id registration ' .$id;
+            $content = 'Successful id registration ' .$id .'</br><a href="'.$base_url.'/user/query"> View all users</a>';
             $title = 'Status Registration';
             $response = new AjaxResponse();
             $response->addCommand(new OpenModalDialogCommand($title, $content, array('width'=>'700')));

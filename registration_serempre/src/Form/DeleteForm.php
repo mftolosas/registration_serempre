@@ -69,9 +69,11 @@ class DeleteForm extends ConfirmFormBase {
      */
     public function submitForm(array &$form, FormStateInterface $form_state) {
         $query = \Drupal::database();
-        $query->delete('myusers')
+        if (db_table_exists('myusers')) {
+            $query->delete('myusers')
             ->condition('id', (int)$this->id)
             ->execute();
+        }
         drupal_set_message("succesfully deleted");
         $form_state->setRedirect('registration_serempre.display_users_controller');
     }

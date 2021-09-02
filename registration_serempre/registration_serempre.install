@@ -21,11 +21,11 @@ function registration_serempre_schema() {
     return $schema;
 }
 
-/**
+/** 
  * Implements hook_uninstall().
- */
+ */ 
 function registration_serempre_uninstall() {
-    if (db_table_exists('register')) {
-        db_drop_table('register');
+    if (db_table_exists('myusers')) {
+        db_drop_table('myusers');
     }
 }
